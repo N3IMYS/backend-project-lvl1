@@ -25,5 +25,12 @@
   "bugs": {
     "url": "https://github.com/N3IMYS/backend-project-lvl1/issues"
   },
-  "homepage": "https://github.com/N3IMYS/backend-project-lvl1#readme"
+  "homepage": "https://github.com/N3IMYS/backend-project-lvl1#readme",
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.24.2",
+    "eslint-plugin-jest": "^24.4.0",
+    "prettier": "^2.3.2"
+  }
 }
