@@ -1,0 +1,10 @@
+name: afterlinting
+on: push
+jobs:
+  my-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: get back  
+        run: cd ~/backend-project-lvl1
+      - name: start linting
+        run: make lint
