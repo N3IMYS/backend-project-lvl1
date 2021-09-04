@@ -3,7 +3,7 @@ env:
   es2020: true
 
 extends:
-  - "airbnb-base"
+  - 'airbnb-base'
 
 parserOptions:
   ecmaVersion: 11
