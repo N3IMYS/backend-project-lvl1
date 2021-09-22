@@ -2,7 +2,7 @@
   "name": "@hexlet/code",
   "type": "module",
   "version": "1.0.0",
-  "description": "hello then",
+  "description": "This is a first project from hexlet.",
   "main": "index.js",
   "bin": {
     "code": "brain-games.js",
@@ -14,8 +14,6 @@
     "brain-prime": "bin/brain-prime.js"
   },
   "dependencies": {
-    "node": "^16.6.1",
-    "node-bin-setup": "^1.0.6",
     "readline-sync": "^1.4.10"
   },
   "scripts": {
@@ -25,7 +23,7 @@
     "type": "git",
     "url": "git+https://github.com/N3IMYS/backend-project-lvl1.git"
   },
-  "author": "",
+  "author": "n3imys",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/N3IMYS/backend-project-lvl1/issues"
