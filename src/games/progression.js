@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 import { getRndm } from '../cli.js';
 
 const question = 'What number is missing in the progression?';

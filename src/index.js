@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 import {
   greeting, failure, congrats, pass, askQuest,
 } from './cli.js';

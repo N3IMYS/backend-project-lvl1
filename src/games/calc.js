@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 import { getRndm } from '../cli.js';
 
 const question = 'What is the result of the expression?';

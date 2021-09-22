@@ -2,8 +2,7 @@ name: lint
 
 # Controls when the workflow will run
 on:
-  - push
-  
+
   push:
     branches: [master]
   pull_request:
