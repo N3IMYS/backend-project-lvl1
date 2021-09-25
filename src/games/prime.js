@@ -17,7 +17,7 @@ const primeKit = (number) => {
 const getRndmKit = () => {
   const number = getRndm(0, 100);
   const result = primeKit(number);
-  const expression = ` ${number}`;
+  const expression = `${number}`;
   const array = [question, result, expression];
   return array;
 };
