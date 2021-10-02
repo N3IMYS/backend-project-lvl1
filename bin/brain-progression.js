@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-import getRndmKit from '../src/games/progression.js';
-import game from '../src/index.js';
+import runGame from '../src/games/progression.js';
 
-game(getRndmKit);
+runGame();

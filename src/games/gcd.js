@@ -1,7 +1,7 @@
-import { getRndm } from '../cli.js';
+import { getRndm } from '../utilities.js';
+import game from '../index.js';
 
-const question = 'What is the result of the expression?';
-
+const text = 'Find the greatest common divisor of given numbers.';
 const gcdCalc = (a, b) => {
   let result = 1;
   const arr = [];
@@ -20,12 +20,12 @@ const gcdCalc = (a, b) => {
   return arr[arr.length - 1];
 };
 
-const getRndmKit = () => {
+const gcdRound = () => {
   const a = getRndm(0, 100);
   const b = getRndm(0, 100);
   const result = String(gcdCalc(a, b));
   const expression = `${a} ${b}`;
-  const array = [question, result, expression];
+  const array = [result, expression];
   return array;
 };
-export default getRndmKit;
+export default () => game(gcdRound, text);

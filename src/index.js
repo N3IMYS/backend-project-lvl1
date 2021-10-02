@@ -1,32 +1,20 @@
 import {
-  greeting, failure, congrats, pass, askQuest,
-} from './cli.js';
+  congrats, pass, askQuest,
+} from './utilities.js';
+import firstMessage from './cli.js';
 
-export default (getRndmKit) => {
-  const name = greeting();
+export default (gameRound, text) => {
   const maxRound = 2;
-  let round = 0;
-  let question = '';
-  let result = '';
-  let expression = '';
-  let gainedAns = '';
-  const parse = (array) => {
-    [question, result, expression] = array;
-    return result;
-  };
-  let array = getRndmKit;
-  array = getRndmKit();
-  result = parse(array);
-  gainedAns = askQuest(question, expression);
-  for (round; round < maxRound; round += 1) {
-    if (String(result) === gainedAns) {
-      array = getRndmKit();
-      result = parse(array);
-      gainedAns = pass(expression);
+  const name = firstMessage();
+  let array = gameRound();
+  let gainedAns = askQuest(text, array[1]);
+  for (let round = 0; round < maxRound; round += 1) {
+    if (String(array[0]) === gainedAns) {
+      array = gameRound();
+      gainedAns = pass(array[1]);
     } else {
-      failure(result, gainedAns, name);
       break;
     }
   }
-  congrats(gainedAns, result, round, name);
+  congrats(gainedAns, array[0], name);
 };

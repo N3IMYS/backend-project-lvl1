@@ -1,6 +1,7 @@
-import { getRndm } from '../cli.js';
+import { getRndm } from '../utilities.js';
+import game from '../index.js';
 
-const question = 'What number is missing in the progression?';
+const text = 'What number is missing in the progression?';
 let expression = '';
 const progressionKit = (step, first, goneItem) => {
   const result = [];
@@ -25,7 +26,7 @@ const getRndmKit = () => {
   const step = getRndm(1, 10);
   const first = getRndm(1, 100);
   const result = progressionKit(step, first, goneItem);
-  const array = [question, result, expression];
+  const array = [String(result), expression];
   return array;
 };
-export default getRndmKit;
+export default () => game(getRndmKit, text);

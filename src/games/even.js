@@ -1,6 +1,7 @@
-import { getRndm } from '../cli.js';
+import { getRndm } from '../utilities.js';
+import game from '../index.js';
 
-const question = 'Answer "yes" if the number is even, otherwise answer "no".';
+const text = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 const evenKit = (number) => {
   if (number % 2 === 0) {
@@ -9,11 +10,11 @@ const evenKit = (number) => {
   return 'no';
 };
 
-const getRndmKit = () => {
+const evenRound = () => {
   const number = getRndm(0, 100);
   const result = evenKit(number);
-  const expression = `${number}`;
-  const array = [question, result, expression];
+  const question = `${number}`;
+  const array = [result, question];
   return array;
 };
-export default getRndmKit;
+export default () => game(evenRound, text);
