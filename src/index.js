@@ -1,20 +1,18 @@
-import {
-  congrats, pass, askQuest,
-} from './utilities.js';
-import firstMessage from './cli.js';
+import sayHello from './cli.js';
+import readlineSync from 'readline-sync';
 
-export default (gameRound, text) => {
-  const maxRound = 2;
-  const name = firstMessage();
-  let array = gameRound();
-  let gainedAns = askQuest(text, array[1]);
-  for (let round = 0; round < maxRound; round += 1) {
-    if (String(array[0]) === gainedAns) {
-      array = gameRound();
-      gainedAns = pass(array[1]);
-    } else {
-      break;
+const name = sayHello();
+const maxRound = 3;
+
+export default (getRound, text) => {
+  let gainedAns = console.log((text));
+  for (let round = 1; round <= maxRound; round += 1) {
+    const[result, question] = getRound();
+    gainedAns = readlineSync.question(`Question: ${question}\nYour answer: `);
+    if (result !== gainedAns) {
+      return console.log(`'${gainedAns}' is wrong answer ;(. Correct answer was '${result}'.\nLet's try again, ${name}!`);
     }
+    console.log('Correct!');
   }
-  congrats(gainedAns, array[0], name);
+  console.log(`Congratulations, ${name}!`)
 };

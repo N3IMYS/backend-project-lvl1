@@ -1,5 +1,5 @@
 [![Actions Status](https://github.com/N3IMYS/backend-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/N3IMYS/backend-project-lvl1/actions)
-![lint](https://github.com/n3imys/backend-project-lvl1/actions/workflows/github-action-lint2.yml/badge.svg)
+[![lint](https://github.com/n3imys/backend-project-lvl1/actions/workflows/github-action-lint2.yml/badge.svg)](https://github.com/N3IMYS/backend-project-lvl1/actions/workflows/github-action-lint2.yml)
 [![Maintainability](https://api.codeclimate.com/v1/badges/741b24077273e96b11c4/maintainability)](https://codeclimate.com/github/N3IMYS/backend-project-lvl1/maintainability)
 
 ## Installation

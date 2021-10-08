@@ -1,11 +1,11 @@
-import { getRndm } from '../utilities.js';
+import  getRandom  from '../utilities.js';
 import game from '../index.js';
 
 const text = 'What is the result of the expression?';
 const operMin = 0;
 const operMax = 2;
 const operators = ['+', '-', '*'];
-const calcKit = (a, b, operator) => {
+const genCalc = (a, b, operator) => {
   switch (operator) {
     case '+':
       return a + b;
@@ -18,14 +18,14 @@ const calcKit = (a, b, operator) => {
   }
 };
 
-const calcRound = () => {
-  const operator = operators[getRndm(operMin, operMax)];
-  const a = getRndm(0, 50);
-  const b = getRndm(0, 10);
-  const result = String(calcKit(a, b, operator));
+const getCalc = () => {
+  const operator = operators[getRandom(operMin, operMax)];
+  const a = getRandom(0, 50);
+  const b = getRandom(0, 10);
+  const result = String(genCalc(a, b, operator));
   const question = `${a} ${operator} ${b}`;
   const array = [result, question];
   return array;
 };
 
-export default () => game(calcRound, text);
+export default () => game(getCalc, text);

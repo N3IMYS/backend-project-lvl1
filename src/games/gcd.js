@@ -1,8 +1,8 @@
-import { getRndm } from '../utilities.js';
+import  getRandom  from '../utilities.js';
 import game from '../index.js';
 
 const text = 'Find the greatest common divisor of given numbers.';
-const gcdCalc = (a, b) => {
+const genGcd = (a, b) => {
   let result = 1;
   const arr = [];
   let bigger = 0;
@@ -20,12 +20,12 @@ const gcdCalc = (a, b) => {
   return arr[arr.length - 1];
 };
 
-const gcdRound = () => {
-  const a = getRndm(0, 100);
-  const b = getRndm(0, 100);
-  const result = String(gcdCalc(a, b));
+const getGcd = () => {
+  const a = getRandom(0, 100);
+  const b = getRandom(0, 100);
+  const result = String(genGcd(a, b));
   const expression = `${a} ${b}`;
   const array = [result, expression];
   return array;
 };
-export default () => game(gcdRound, text);
+export default () => game(getGcd, text);

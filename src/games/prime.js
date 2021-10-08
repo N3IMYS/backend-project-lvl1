@@ -1,9 +1,9 @@
-import { getRndm } from '../utilities.js';
+import  getRandom  from '../utilities.js';
 import game from '../index.js';
 
 const text = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-const primeKit = (number) => {
+const genPrime = (number) => {
   const res = [];
   for (let count = 1; count <= number; count += 1) {
     if (number % count === 0) {
@@ -16,11 +16,11 @@ const primeKit = (number) => {
   return 'yes';
 };
 
-const getRndmKit = () => {
-  const number = getRndm(0, 100);
-  const result = primeKit(number);
+const getPrime = () => {
+  const number = getRandom(0, 100);
+  const result = genPrime(number);
   const array = [result, String(number)];
   return array;
 };
 
-export default () => game(getRndmKit, text);
+export default () => game(getPrime, text);
