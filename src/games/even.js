@@ -1,4 +1,4 @@
-import  getRandom  from '../utilities.js';
+import getRandom from '../utilities.js';
 import game from '../index.js';
 
 const text = 'Answer "yes" if the number is even, otherwise answer "no".';
