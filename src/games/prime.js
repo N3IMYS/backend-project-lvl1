@@ -1,7 +1,7 @@
 import getRandom from '../utilities.js';
-import game from '../index.js';
+import runGame from '../index.js';
 
-const text = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const genPrime = (number) => {
   const res = [];
@@ -18,9 +18,9 @@ const genPrime = (number) => {
 
 const getPrime = () => {
   const number = getRandom(0, 100);
-  const result = genPrime(number);
-  const array = [result, String(number)];
+  const answer = genPrime(number);
+  const array = [answer, String(number)];
   return array;
 };
 
-export default () => game(getPrime, text);
+export default () => runGame(getPrime, description);

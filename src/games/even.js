@@ -1,9 +1,9 @@
 import getRandom from '../utilities.js';
-import game from '../index.js';
+import runGame from '../index.js';
 
-const text = 'Answer "yes" if the number is even, otherwise answer "no".';
+const description = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-const genEven = (number) => {
+const isEven = (number) => {
   if (number % 2 === 0) {
     return 'yes';
   }
@@ -12,9 +12,9 @@ const genEven = (number) => {
 
 const getEven = () => {
   const number = getRandom(0, 100);
-  const result = genEven(number);
+  const result = isEven(number);
   const question = `${number}`;
   const array = [result, question];
   return array;
 };
-export default () => game(getEven, text);
+export default () => runGame(getEven, description);

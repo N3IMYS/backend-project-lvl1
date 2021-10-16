@@ -1,31 +1,29 @@
 import getRandom from '../utilities.js';
-import game from '../index.js';
+import runGame from '../index.js';
 
-const text = 'What is the result of the expression?';
-const operMin = 0;
-const operMax = 2;
+const description = 'What is the result of the expression?';
 const operators = ['+', '-', '*'];
-const genCalc = (a, b, operator) => {
+const calc = (num1, num2, operator) => {
   switch (operator) {
     case '+':
-      return a + b;
+      return num1 + num2;
     case '-':
-      return a - b;
+      return num1 - num2;
     case '*':
-      return a * b;
+      return num1 * num2;
     default:
-      return null;
+      throw new Error(`Unsupported operator: '${operator}'!`);
   }
 };
 
 const getCalc = () => {
-  const operator = operators[getRandom(operMin, operMax)];
+  const operator = operators[getRandom(0, operators.length - 1)];
   const a = getRandom(0, 50);
   const b = getRandom(0, 10);
-  const result = String(genCalc(a, b, operator));
+  const answer = String(calc(a, b, operator));
   const question = `${a} ${operator} ${b}`;
-  const array = [result, question];
+  const array = [answer, question];
   return array;
 };
 
-export default () => game(getCalc, text);
+export default () => runGame(getCalc, description);

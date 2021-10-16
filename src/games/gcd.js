@@ -1,7 +1,7 @@
 import getRandom from '../utilities.js';
-import game from '../index.js';
+import runGame from '../index.js';
 
-const text = 'Find the greatest common divisor of given numbers.';
+const description = 'Find the greatest common divisor of given numbers.';
 const genGcd = (a, b) => {
   let result = 1;
   const arr = [];
@@ -23,9 +23,9 @@ const genGcd = (a, b) => {
 const getGcd = () => {
   const a = getRandom(0, 100);
   const b = getRandom(0, 100);
-  const result = String(genGcd(a, b));
-  const expression = `${a} ${b}`;
-  const array = [result, expression];
+  const answer = String(genGcd(a, b));
+  const question = `${a} ${b}`;
+  const array = [answer, question];
   return array;
 };
-export default () => game(getGcd, text);
+export default () => runGame(getGcd, description);
