@@ -5,16 +5,16 @@ const description = 'Answer "yes" if the number is even, otherwise answer "no".'
 
 const isEven = (number) => {
   if (number % 2 === 0) {
-    return 'yes';
+    return true;
   }
-  return 'no';
+  return false;
 };
 
 const getEven = () => {
   const number = getRandom(0, 100);
-  const result = isEven(number);
+  const correctAnswer = isEven(number) ? 'yes' : 'no';
   const question = `${number}`;
-  const array = [result, question];
-  return array;
+  const gameData = [correctAnswer, question];
+  return gameData;
 };
 export default () => runGame(getEven, description);

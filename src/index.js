@@ -1,8 +1,9 @@
 import readlineSync from 'readline-sync';
-import getName from './cli.js';
 
 const roundsCount = 3;
-const name = getName();
+console.log('Welcome to the Brain Games!');
+const name = readlineSync.question('May I have your name? ');
+console.log(`Hello, ${name}!`);
 
 export default (getRound, gameCondition) => {
   for (let round = 1; round <= roundsCount; round += 1) {

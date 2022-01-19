@@ -20,10 +20,10 @@ const getCalc = () => {
   const operator = operators[getRandom(0, operators.length - 1)];
   const a = getRandom(0, 50);
   const b = getRandom(0, 10);
-  const answer = String(calc(a, b, operator));
+  const correctAnswer = String(calc(a, b, operator));
   const question = `${a} ${operator} ${b}`;
-  const array = [answer, question];
-  return array;
+  const gameData = [correctAnswer, question];
+  return gameData;
 };
 
 export default () => runGame(getCalc, description);

@@ -3,24 +3,25 @@ import runGame from '../index.js';
 
 const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-const genPrime = (number) => {
-  const res = [];
-  for (let count = 1; count <= number; count += 1) {
-    if (number % count === 0) {
-      res.push(count);
+const isPrime = (number) => {
+  if (number >= 2){
+    let divider = 2;
+    while(divider < Math.sqrt(number)){
+      if(number % divider === 0){
+        return false;
+      }
+      divider += 1 ;
     }
+    return true;
   }
-  if (res.length !== 2) {
-    return 'no';
-  }
-  return 'yes';
+  return false;
 };
 
 const getPrime = () => {
-  const number = getRandom(0, 100);
-  const answer = genPrime(number);
-  const array = [answer, String(number)];
-  return array;
+  const number = getRandom(1, 100);
+  const correctAnswer = isPrime(number) ? 'yes' : 'no';
+  const gameData = [correctAnswer, String(number)];
+  return gameData;
 };
 
 export default () => runGame(getPrime, description);
