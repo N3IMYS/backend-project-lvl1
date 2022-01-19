@@ -11,7 +11,6 @@ const genGcd = (a, b) => {
   return genGcd(b, a % b);
 };
 
-
 const getGcd = () => {
   const a = getRandom(0, 100);
   const b = getRandom(0, 100);
